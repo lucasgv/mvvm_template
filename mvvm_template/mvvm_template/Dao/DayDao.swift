@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class DayDao: DayDaoProtocol {
 
-    func addDay(date: Date, hour: Date) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
+    private var appDelegate: AppDelegate?
+    private var context: NSManagedObjectContext?
 
-        let context = appDelegate.persistentContainer.viewContext
+    init() {
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+    }
+
+    func addDay(date: Date, hour: Date) {
+        guard let context = self.context else { return }
         let day = Day(context: context)
         day.date = date
 
@@ -25,9 +30,27 @@ class DayDao: DayDaoProtocol {
 
         day.pointTimes?.adding(pointTime)
 
-        appDelegate.saveContext()
+        appDelegate?.saveContext()
     }
 
     func removeDay() {
+    }
+
+    func getDayByDate(date: Date) -> Day? {
+        guard let context = self.context else { return nil }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Day")
+        do {
+            let result = try context.fetch(fetchRequest)
+            if let results = result as? [NSManagedObject] {
+                for data in results {
+                    guard let day = data as? Day else { return nil }
+                    if day.date?.toString() == date.toString() {
+                        return day
+                    }
+                }
+            }
+        } catch {
+        }
+        return nil
     }
 }

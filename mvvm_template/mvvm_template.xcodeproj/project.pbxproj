@@ -19,6 +19,8 @@
 		59EA24132317134D00E46F12 /* DayDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EA24122317134D00E46F12 /* DayDao.swift */; };
 		59F4370123171A4B008EEE9E /* DayDaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4370023171A4B008EEE9E /* DayDaoProtocol.swift */; };
 		59F43703231720CE008EEE9E /* DayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F43702231720CE008EEE9E /* DayRepository.swift */; };
+		59F43711231885EB008EEE9E /* DayDaoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F43710231885EB008EEE9E /* DayDaoMock.swift */; };
+		59F43713231886EA008EEE9E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F43712231886EA008EEE9E /* DependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		59EA24122317134D00E46F12 /* DayDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDao.swift; sourceTree = "<group>"; };
 		59F4370023171A4B008EEE9E /* DayDaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDaoProtocol.swift; sourceTree = "<group>"; };
 		59F43702231720CE008EEE9E /* DayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRepository.swift; sourceTree = "<group>"; };
+		59F43710231885EB008EEE9E /* DayDaoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDaoMock.swift; sourceTree = "<group>"; };
+		59F43712231886EA008EEE9E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				590171552316BE86009D45F7 /* Info.plist */,
 				590171502316BE86009D45F7 /* Assets.xcassets */,
 				5901714D2316BE84009D45F7 /* mvvm_template.xcdatamodeld */,
+				59F43712231886EA008EEE9E /* DependencyContainer.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				59EA24122317134D00E46F12 /* DayDao.swift */,
+				59F43710231885EB008EEE9E /* DayDaoMock.swift */,
 				59F4370023171A4B008EEE9E /* DayDaoProtocol.swift */,
 			);
 			path = Dao;
@@ -326,6 +332,8 @@
 				590171472316BE84009D45F7 /* AppDelegate.swift in Sources */,
 				5901717D2316E608009D45F7 /* HomeViewModel.swift in Sources */,
 				59F4370123171A4B008EEE9E /* DayDaoProtocol.swift in Sources */,
+				59F43713231886EA008EEE9E /* DependencyContainer.swift in Sources */,
+				59F43711231885EB008EEE9E /* DayDaoMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

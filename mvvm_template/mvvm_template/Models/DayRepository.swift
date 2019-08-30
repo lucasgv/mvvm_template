@@ -12,15 +12,15 @@ class DayRepository {
 
     private var dao: DayDaoProtocol
 
-    init(_ dao: DayDaoProtocol) {
+    init(dao: DayDaoProtocol) {
         self.dao = dao
-    }
-
-    convenience init(dao: DayDaoProtocol) {
-        self.init(dao)
     }
 
     func createNewDay(date: Date, hour: Date) {
         dao.addDay(date: date, hour: hour)
+    }
+
+    func returnSavedTodayDay() -> Day? {
+        return dao.getDayByDate(date: Date())
     }
 }

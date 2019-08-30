@@ -12,4 +12,5 @@ protocol DayDaoProtocol {
 
     func addDay(date: Date, hour: Date)
     func removeDay()
+    func getDayByDate(date: Date) -> Day?
 }

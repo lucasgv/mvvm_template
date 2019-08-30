@@ -10,20 +10,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var dao: DayDao?
+    lazy var homeViewModel: HomeViewModel = {
+        let container = DependencyContainer()
+        return container.homeViewModelDependency()
+    }()
+
+    @IBOutlet weak var labelWeekDay: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setup()
+        self.setupDayInfo()
     }
 
-    private func setup() {
-        dao = DayDao()
+    private func setupDayInfo() {
+        labelWeekDay.text = homeViewModel.weekDay
     }
 
     @IBAction func pressBegin(_ sender: Any) {
-        guard let dayDao = dao else { return }
-        let dayRepository = DayRepository(dayDao)
+        let dayRepository = DayRepository(dao: DayDao())
         dayRepository.createNewDay(date: Date(), hour: Date())
     }
 }

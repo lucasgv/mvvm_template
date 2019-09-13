@@ -26,18 +26,3 @@ public class HomeViewModel {
 
 
 }
-
-extension Date {
-    func dayOfWeek() -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        return dateFormatter.string(from: self).capitalized
-    }
-
-    func toString(format: String = "yyyy-MM-dd") -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.dateFormat = format
-        return formatter.string(from: self)
-    }
-}

@@ -10,10 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    lazy var homeViewModel: HomeViewModel = {
-        let container = DependencyContainer()
-        return container.homeViewModelDependency()
-    }()
+    var homeViewModel: HomeViewModel?
 
     @IBOutlet weak var labelWeekDay: UILabel!
 
@@ -23,7 +20,7 @@ class HomeViewController: UIViewController {
     }
 
     private func setupDayInfo() {
-        labelWeekDay.text = homeViewModel.weekDay
+        labelWeekDay.text = homeViewModel?.weekDay
     }
 
     @IBAction func pressBegin(_ sender: Any) {
@@ -31,4 +28,6 @@ class HomeViewController: UIViewController {
         dayRepository.createNewDay(date: Date(), hour: Date())
     }
 }
+
+extension HomeViewController: StoryboardInstantiatable {}
 

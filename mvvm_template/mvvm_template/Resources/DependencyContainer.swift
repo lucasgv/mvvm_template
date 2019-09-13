@@ -10,10 +10,16 @@ import Foundation
 
 class DependencyContainer {
     private lazy var homeViewModel = HomeViewModel(dayRepository: DayRepository(dao: DayDao()))
+    private lazy var homeViewModelMock = HomeViewModel(dayRepository: DayRepository(dao: DayDaoMock()))
 }
 
 extension DependencyContainer {
+
     func homeViewModelDependency() -> HomeViewModel {
-        return homeViewModel
+        if Constants.useMock {
+            return homeViewModelMock
+        } else {
+            return homeViewModel
+        }
     }
 }

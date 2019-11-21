@@ -120,11 +120,13 @@
 			isa = PBXGroup;
 			children = (
 				590171462316BE84009D45F7 /* AppDelegate.swift */,
+				59D443122335708E0034B45F /* Commom */,
 				5901717B2316BF45009D45F7 /* Resources */,
 				590171782316BEFA009D45F7 /* Models */,
 				590171792316BF23009D45F7 /* Views */,
 				590171772316BEF5009D45F7 /* Controllers */,
 				5901717A2316BF29009D45F7 /* ViewModels */,
+				59D44314233571190034B45F /* Factory */,
 				59EA24112317133F00E46F12 /* Dao */,
 			);
 			path = mvvm_template;
@@ -152,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				590171482316BE84009D45F7 /* HomeViewController.swift */,
-				59620033232C580B000E53E5 /* HomeViewControllerFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,13 +186,9 @@
 		5901717B2316BF45009D45F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				596200272320488E000E53E5 /* Extensions */,
 				590171552316BE86009D45F7 /* Info.plist */,
 				590171502316BE86009D45F7 /* Assets.xcassets */,
-				5901714D2316BE84009D45F7 /* mvvm_template.xcdatamodeld */,
-				59F43712231886EA008EEE9E /* DependencyContainer.swift */,
-				59620031232C5106000E53E5 /* StoryboardInstantiatable.swift */,
-				5962002A23204DAA000E53E5 /* Constants.swift */,
+				596200272320488E000E53E5 /* Extensions */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -204,9 +201,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		59D443122335708E0034B45F /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				59F43712231886EA008EEE9E /* DependencyContainer.swift */,
+				59620031232C5106000E53E5 /* StoryboardInstantiatable.swift */,
+				5962002A23204DAA000E53E5 /* Constants.swift */,
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		59D44314233571190034B45F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				59620033232C580B000E53E5 /* HomeViewControllerFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		59EA24112317133F00E46F12 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
+				5901714D2316BE84009D45F7 /* mvvm_template.xcdatamodeld */,
 				59EA24122317134D00E46F12 /* DayDao.swift */,
 				59F43710231885EB008EEE9E /* DayDaoMock.swift */,
 				59F4370023171A4B008EEE9E /* DayDaoProtocol.swift */,

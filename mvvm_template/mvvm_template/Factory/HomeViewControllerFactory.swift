@@ -9,9 +9,9 @@
 import Foundation
 
 struct HomeViewControllerFactory {
-    static func instantiate(homeViewModel: HomeViewModel) -> HomeViewController {
+    static func instantiate() -> HomeViewController {
         let viewController = HomeViewController.instantiate(storyboardName: "Main")
-        viewController.homeViewModel = homeViewModel
+        viewController.homeViewModel = DependencyContainer().homeViewModelDependency()
         return viewController
     }
 }

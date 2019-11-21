@@ -24,5 +24,11 @@ public class HomeViewModel {
         self.dayRepository = dayRepository
     }
 
+    // MARK: - Public
+
+    func startMyDay() {
+        dayRepository.createNewDay(date: Date(), hour: Date())
+    }
+
 
 }

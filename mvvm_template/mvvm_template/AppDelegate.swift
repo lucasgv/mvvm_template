@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let homeViewModel = DependencyContainer().homeViewModelDependency()
-        let controller = HomeViewControllerFactory.instantiate(homeViewModel: homeViewModel)
-        self.window?.rootViewController = controller
+        self.window?.rootViewController = HomeViewControllerFactory.instantiate()
         self.window?.makeKeyAndVisible()
 
         return true

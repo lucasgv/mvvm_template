@@ -20,6 +20,7 @@ class DayDaoMock: DayDaoProtocol {
     }
 
     func addDay(date: Date, hour: Date) {
+        
     }
 
     func removeDay() {
